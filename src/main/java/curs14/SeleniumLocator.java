@@ -71,4 +71,11 @@ public class SeleniumLocator extends BaseTest {
 		WebElement nameTextBox =  driver.findElement(By.cssSelector("input[name=\"author\"]"));
 		nameTextBox.sendKeys("My name");	
 	}
+	
+	@Test(priority=8)
+	public void xpathLocator() {
+		WebElement emailTextBox =  driver.findElement(By.xpath("//input[@type='email']"));
+		emailTextBox.sendKeys("test@test.com");	
+	}
+	
 }
