@@ -14,6 +14,7 @@ public class MenuPage {
 	
 	public By loginLink = By.cssSelector("li>a[href='#popup_login']");
 	public By contactsLink =  By.linkText("CONTACTS");
+	public By shopLink = By.linkText("BOOKS");
 	
 	
 	public void navigateTo(By locator) {
