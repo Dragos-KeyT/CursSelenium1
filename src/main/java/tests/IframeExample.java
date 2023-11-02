@@ -10,6 +10,7 @@ public class IframeExample extends BaseTest{
 	public void iframeTest() {
 		app.click(app.menu.contactsLink);
 		app.contacts.zoomMap(app.contacts.zoomInButton);
+		driver.switchTo().defaultContent();
 		app.returnWebElement(app.contacts.nameField).sendKeys("Text");
 		
 		
