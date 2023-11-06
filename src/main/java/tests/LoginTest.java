@@ -2,6 +2,7 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
@@ -10,8 +11,9 @@ import utils.BaseTest;
 
 public class LoginTest extends BaseTest{
 
+	@Parameters({"user", "pass"})
 	@Test(priority=1)
-	public void validLogin() throws InterruptedException {
+	public void validLogin(String username, String password) throws InterruptedException {
 		
 		//open login popup
 		MenuPage menu =  new MenuPage(driver);
@@ -20,7 +22,7 @@ public class LoginTest extends BaseTest{
 		//insert valid password
 		//press submit button
 		LoginPage login = new LoginPage(driver);
-		login.loginInApp("TestUser", "12345@67890");
+		login.loginInApp(username, password);
 		//verify sucess login
 		Thread.sleep(1000);//Bad practice
 		assertTrue(login.checkLoginMsgIsDisplayed(login.sucessLoginMsg));
