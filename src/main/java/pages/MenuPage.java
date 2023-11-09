@@ -16,6 +16,9 @@ public class MenuPage {
 	public By contactsLink =  By.linkText("CONTACTS");
 	public By shopLink = By.linkText("BOOKS");
 	public By eventsLink = By.linkText("EVENTS");
+	public By blogLink = By.linkText("BLOG");
+	public By aboutLink = By.linkText("ABOUT");
+	public By signUpButton = By.cssSelector("input[value='Sign up']");
 	
 	
 	public void navigateTo(By locator) {
