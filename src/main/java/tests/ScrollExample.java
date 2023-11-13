@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -12,7 +13,8 @@ public class ScrollExample extends BaseTest{
 	public void scrollByPixel() {
 		
 		//JS scroll
-		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0, 2000)");
 		
 		//Action class scroll
 		Actions action = new Actions(driver);
@@ -23,7 +25,8 @@ public class ScrollExample extends BaseTest{
 	public void scrollToElement() throws InterruptedException {
 		
 		//JS scroll
-		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView()", app.returnWebElement(app.menu.signUpButton));
 		
 		//Action class scroll
 		Actions action = new Actions(driver);
@@ -35,7 +38,10 @@ public class ScrollExample extends BaseTest{
 	public void scrollTopOrDown() throws InterruptedException {
 		
 		//js scroll
-		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(3000);
+		jse.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
 		//action class scroll
 		Actions action = new Actions(driver);
 		action.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
