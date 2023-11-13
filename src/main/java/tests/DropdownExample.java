@@ -11,7 +11,7 @@ import utils.BaseTest;
 
 public class DropdownExample extends BaseTest{
 
-	@Test(priority = 1)
+	@Test(priority = 1, groups = "ProductFunctionality")
 	public void selectByValueTest() {
 		
 		app.click(app.menu.shopLink);
@@ -20,14 +20,14 @@ public class DropdownExample extends BaseTest{
 		assertEquals(app.shop.getCurrentSelectedOption(), "Sort by latest");
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, groups = "ProductFunctionality")
 	public void selectByTextTest() {
 		app.click(app.menu.shopLink);
 		app.shop.filterByVisibleText("Sort by average rating");
 		assertEquals(app.shop.getCurrentSelectedOption(), "Sort by average rating");
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, groups = "ProductFunctionality")
 	public void selectByIndexTest() {
 		app.click(app.menu.shopLink);
 		app.shop.filterByIndex(4);
