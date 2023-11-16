@@ -27,4 +27,12 @@ public class MenuPage {
 		driver.findElement(locator).click();
 	}
 	
+	public void search(String text) {
+		driver.findElement(searchIcon).click();
+		driver.findElement(searchInput).clear();
+		driver.findElement(searchInput).sendKeys(text);
+		driver.findElement(searchIcon).click();
+
+	}
+	
 }
